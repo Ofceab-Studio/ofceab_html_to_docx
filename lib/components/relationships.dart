@@ -28,12 +28,3 @@ class RelationShipsComponent extends WordComponent {
               ...attributes
             ]);
 }
-
-
-// [
-//           // TextAttributeComponent(key: 'Extension', value: "rels"),
-//           // TextAttributeComponent(
-//           //     key: 'ContentType',
-//           //     value:
-//           //         "application/vnd.openxmlformats-package.relationships+xml"),
-//         ]

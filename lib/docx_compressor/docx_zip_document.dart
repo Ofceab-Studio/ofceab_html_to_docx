@@ -40,6 +40,8 @@ class DocxCompressor implements IDocxCompressor {
     final contentTypeDocumentData = contentTypeDocument.xmlContent;
     final relsDocumentData = relsDocument.xmlContent;
 
+    print(relsDocumentData);
+
     _zipArchiver.addFile(ArchiveFile(
         mainDocument.fileName, mainDocumentData.length, mainDocumentData));
     // Add content Type file

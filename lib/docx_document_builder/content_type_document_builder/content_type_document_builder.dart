@@ -32,5 +32,5 @@ class ContentTypeDocumentBuilder
   String get xmlContent => builder.buildDocument().toXmlString();
 
   @override
-  String get fileName => '[Content_Types].xml';
+  String get fileName => '/[Content_Types].xml';
 }

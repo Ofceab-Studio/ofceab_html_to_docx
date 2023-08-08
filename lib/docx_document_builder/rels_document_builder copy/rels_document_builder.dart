@@ -33,5 +33,5 @@ class RelsDocumentBuilder implements IRelationShipBuilder, IBuildableComponent {
   String get xmlContent => builder.buildDocument().toXmlString();
 
   @override
-  String get fileName => '_rels/.rels.xml';
+  String get fileName => '/_rels/.rels.xml';
 }

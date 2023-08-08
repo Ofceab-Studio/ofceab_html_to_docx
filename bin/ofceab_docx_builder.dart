@@ -84,6 +84,8 @@ void main() async {
         ],
       ));
 
+  print(contentTypeXmlBuilder.buildDocument().toXmlString());
+
   final docxCompressor = DocxCompressor(
       contentTypeDocument: contentTypeDocument,
       mainDocument: mainDocument,
