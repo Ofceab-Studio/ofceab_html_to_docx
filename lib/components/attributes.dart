@@ -9,13 +9,18 @@ class AttributeComponent extends IBuildableComponent
 
   /// Value : 13
   String? value;
-  AttributeComponent({required this.label, this.key, this.value});
+  List<AttributeComponent> attributes;
+  AttributeComponent(
+      {required this.label, this.key, this.value, this.attributes = const []});
 
   @override
   void build(XmlBuilder builder) {
     builder.element(label, nest: () {
       if (key != null && value != null) {
         builder.attribute(key!, value);
+      }
+      for (var attribute in attributes) {
+        attribute.build(builder);
       }
     });
   }

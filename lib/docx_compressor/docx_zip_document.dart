@@ -34,14 +34,20 @@ class DocxCompressor implements IDocxCompressor {
   @override
   List<int> compress() {
     // Add document.xml in zp archive
-    _zipArchiver.addFile(ArchiveFile(mainDocument.fileName,
-        mainDocument.xmlContent.length, mainDocument.xmlContent));
+    mainDocument.buildDocument();
+
+    final mainDocumentData = mainDocument.xmlContent;
+    final contentTypeDocumentData = contentTypeDocument.xmlContent;
+    final relsDocumentData = relsDocument.xmlContent;
+
+    _zipArchiver.addFile(ArchiveFile(
+        mainDocument.fileName, mainDocumentData.length, mainDocumentData));
     // Add content Type file
     _zipArchiver.addFile(ArchiveFile(contentTypeDocument.fileName,
-        contentTypeDocument.xmlContent.length, contentTypeDocument.xmlContent));
+        contentTypeDocumentData.length, contentTypeDocumentData));
     // Add rels file
-    _zipArchiver.addFile(ArchiveFile(relsDocument.fileName,
-        relsDocument.xmlContent.length, relsDocument.xmlContent));
+    _zipArchiver.addFile(ArchiveFile(
+        relsDocument.fileName, relsDocumentData.length, relsDocumentData));
 
     return _zipEncoder.encode(_zipArchiver) ?? [];
   }

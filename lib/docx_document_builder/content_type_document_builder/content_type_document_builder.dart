@@ -6,10 +6,12 @@ import '../rels_document_builder copy/rels_document_builder.dart';
 class ContentTypeDocumentBuilder
     implements IBuildableComponent, IRelationShipBuilder {
   final XmlBuilder builder;
+  final WordComponent child;
 
-  ContentTypeDocumentBuilder(this.builder);
+  ContentTypeDocumentBuilder(this.builder, this.child);
 
-  void createMainDocument() {
+  @override
+  void buildDocument() {
     // Build head
     builder.processing(
         'xml', 'version="1.0" encoding="utf-16" standalone="yes"');
@@ -17,7 +19,9 @@ class ContentTypeDocumentBuilder
   }
 
   @override
-  void build(XmlBuilder builder) {}
+  void build(XmlBuilder builder) {
+    child.build(builder);
+  }
 
   @override
   void addRelationShip() {

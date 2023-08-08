@@ -7,7 +7,8 @@ class MainDocumentBuilder implements IBuildableComponent, IExportableComponent {
 
   MainDocumentBuilder(this.builder, this.child);
 
-  void createMainDocument() {
+  @override
+  void buildDocument() {
     // Build head
     builder.processing(
         'xml', 'version="1.0" encoding="utf-16" standalone="yes"');
@@ -23,5 +24,5 @@ class MainDocumentBuilder implements IBuildableComponent, IExportableComponent {
   String get xmlContent => builder.buildDocument().toXmlString();
 
   @override
-  String get fileName => 'word/document.xml';
+  String get fileName => '/document.xml';
 }

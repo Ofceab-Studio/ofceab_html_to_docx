@@ -8,10 +8,11 @@ abstract class IRelationShipBuilder extends IExportableComponent {
 
 class RelsDocumentBuilder implements IRelationShipBuilder, IBuildableComponent {
   final XmlBuilder builder;
+  final WordComponent child;
+  RelsDocumentBuilder(this.builder, this.child);
 
-  RelsDocumentBuilder(this.builder);
-
-  void createMainDocument() {
+  @override
+  void buildDocument() {
     // Build head
     builder.processing(
         'xml', 'version="1.0" encoding="utf-16" standalone="yes"');
@@ -19,7 +20,9 @@ class RelsDocumentBuilder implements IRelationShipBuilder, IBuildableComponent {
   }
 
   @override
-  void build(XmlBuilder builder) {}
+  void build(XmlBuilder builder) {
+    child.build(builder);
+  }
 
   @override
   void addRelationShip() {
@@ -30,5 +33,5 @@ class RelsDocumentBuilder implements IRelationShipBuilder, IBuildableComponent {
   String get xmlContent => builder.buildDocument().toXmlString();
 
   @override
-  String get fileName => '_rels/rels.xml';
+  String get fileName => '_rels/.rels.xml';
 }

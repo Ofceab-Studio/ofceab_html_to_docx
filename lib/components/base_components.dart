@@ -10,6 +10,7 @@ abstract class IBuildableComponent {
 abstract class IExportableComponent {
   String get xmlContent;
   String get fileName;
+  void buildDocument();
 }
 
 abstract class IRenderComponent extends IBuildableComponent {
@@ -31,7 +32,7 @@ class WordComponent implements IRenderComponent {
 
   WordComponent(
       {required this.children,
-      required this.propertiesLabel,
+      this.propertiesLabel,
       required this.label,
       required this.attributes});
 
