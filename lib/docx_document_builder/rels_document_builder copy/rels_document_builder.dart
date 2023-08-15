@@ -15,7 +15,7 @@ class RelsDocumentBuilder implements IRelationShipBuilder, IBuildableComponent {
   void buildDocument() {
     // Build head
     builder.processing(
-        'xml', 'version="1.0" encoding="utf-16" standalone="yes"');
+        'xml', 'version="1.0" encoding="UTF-8" standalone="yes"');
     build(builder);
   }
 
@@ -30,8 +30,11 @@ class RelsDocumentBuilder implements IRelationShipBuilder, IBuildableComponent {
   }
 
   @override
-  String get xmlContent => builder.buildDocument().toXmlString();
+  String get xmlContent {
+    buildDocument();
+    return builder.buildDocument().toXmlString();
+  }
 
   @override
-  String get fileName => '/_rels/.rels.xml';
+  String get fileName => '_rels/.rels';
 }

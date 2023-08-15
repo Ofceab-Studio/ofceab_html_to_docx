@@ -13,7 +13,7 @@ class DocumentComponent extends WordComponent {
             label: _label,
             attributes: [
               TextAttributeComponent(
-                  key: 'xmlns',
+                  key: 'xmlns:w',
                   value:
                       'http://schemas.openxmlformats.org/wordprocessingml/2006/main'),
               ...attributes

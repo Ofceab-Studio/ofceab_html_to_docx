@@ -14,7 +14,7 @@ class ContentTypeDocumentBuilder
   void buildDocument() {
     // Build head
     builder.processing(
-        'xml', 'version="1.0" encoding="utf-16" standalone="yes"');
+        'xml', 'version="1.0" encoding="UTF-8" standalone="yes"');
     build(builder);
   }
 
@@ -29,8 +29,11 @@ class ContentTypeDocumentBuilder
   }
 
   @override
-  String get xmlContent => builder.buildDocument().toXmlString();
+  String get xmlContent {
+    buildDocument();
+    return builder.buildDocument().toXmlString();
+  }
 
   @override
-  String get fileName => '/[Content_Types].xml';
+  String get fileName => '[Content_Types].xml';
 }

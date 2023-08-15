@@ -11,7 +11,8 @@ class RelationShipsComponent extends WordComponent {
             children: [
               RelationshipComponent(children: [], attributes: [
                 TextAttributeComponent(key: "Id", value: "rId1"),
-                TextAttributeComponent(key: "Target", value: "document.xml"),
+                TextAttributeComponent(
+                    key: "Target", value: "word/document.xml"),
                 TextAttributeComponent(
                     key: "Type",
                     value:

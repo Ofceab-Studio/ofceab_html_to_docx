@@ -54,8 +54,6 @@ void main() async {
                 AttributeComponent(
                     key: 'w:val', value: 52.toString(), label: 'w:sz'),
                 AttributeComponent(label: 'w:b'),
-                AttributeComponent(
-                    key: 'w:ascii', value: 'Cambria', label: 'w:rFonts')
               ]),
               RunComponent(children: [
                 TextComponent(text: 'Hello there'),
@@ -65,8 +63,6 @@ void main() async {
                 AttributeComponent(
                     key: 'w:val', value: 52.toString(), label: 'w:sz'),
                 AttributeComponent(label: 'w:b'),
-                AttributeComponent(
-                    key: 'w:ascii', value: 'Cambria', label: 'w:rFonts')
               ]),
               RunComponent(children: [
                 TextComponent(text: 'Hello there'),
@@ -76,15 +72,11 @@ void main() async {
                 AttributeComponent(
                     key: 'w:val', value: 52.toString(), label: 'w:sz'),
                 AttributeComponent(label: 'w:b'),
-                AttributeComponent(
-                    key: 'w:ascii', value: 'Cambria', label: 'w:rFonts')
               ])
             ], attributes: [])
           ], attributes: [])
         ],
       ));
-
-  print(contentTypeXmlBuilder.buildDocument().toXmlString());
 
   final docxCompressor = DocxCompressor(
       contentTypeDocument: contentTypeDocument,

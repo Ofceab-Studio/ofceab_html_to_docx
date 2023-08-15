@@ -7,7 +7,7 @@ class OverrideComponent extends WordComponent {
       {required List<WordComponent> children,
       required List<AttributeComponent> attributes})
       : super(children: children, label: _label, attributes: [
-          TextAttributeComponent(key: 'PartName', value: "/document.xml"),
+          TextAttributeComponent(key: 'PartName', value: "/word/document.xml"),
           TextAttributeComponent(
               key: 'ContentType',
               value:
