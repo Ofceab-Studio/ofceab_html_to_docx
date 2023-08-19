@@ -47,31 +47,40 @@ void main() async {
           BodyComponent(children: [
             ParagraphComponent(children: [
               RunComponent(children: [
-                TextComponent(text: 'Hello there'),
-                TextComponent(text: 'I want to grow up'),
-                TextComponent(text: 'Think more do less'),
+                TextComponent(text: 'Hello there,'),
+                TextComponent(text: ' I want to grow up,'),
+                TextComponent(text: ' Think more do less'),
               ], attributes: [
                 AttributeComponent(
-                    key: 'w:val', value: 52.toString(), label: 'w:sz'),
-                AttributeComponent(label: 'w:b'),
+                    key: 'w:val', value: 12.toString(), label: 'w:sz'),
+                AttributeComponent(
+                    key: 'w:val', value: "4F81BD", label: 'w:color'),
+                AttributeComponent(
+                    key: 'w:ascii', value: 'Cambria', label: 'w:rFonts')
               ]),
+              RunComponent(children: [
+                TextComponent(text: ' Hello there'),
+                TextComponent(text: ' I want to grow up'),
+                TextComponent(text: ' Think more do less'),
+              ], attributes: [
+                AttributeComponent(
+                    key: 'w:val', value: 12.toString(), label: 'w:sz'),
+                AttributeComponent(label: 'w:b'),
+                AttributeComponent(
+                    key: 'w:ascii', value: 'Cambria', label: 'w:rFonts')
+              ]),
+            ], attributes: []),
+            ParagraphComponent(children: [
               RunComponent(children: [
                 TextComponent(text: 'Hello there'),
                 TextComponent(text: 'I want to grow up'),
                 TextComponent(text: 'Think more do less'),
               ], attributes: [
                 AttributeComponent(
-                    key: 'w:val', value: 52.toString(), label: 'w:sz'),
+                    key: 'w:val', value: 12.toString(), label: 'w:sz'),
                 AttributeComponent(label: 'w:b'),
-              ]),
-              RunComponent(children: [
-                TextComponent(text: 'Hello there'),
-                TextComponent(text: 'I want to grow up'),
-                TextComponent(text: 'Think more do less'),
-              ], attributes: [
                 AttributeComponent(
-                    key: 'w:val', value: 52.toString(), label: 'w:sz'),
-                AttributeComponent(label: 'w:b'),
+                    key: 'w:ascii', value: 'Cambria', label: 'w:rFonts')
               ])
             ], attributes: [])
           ], attributes: [])

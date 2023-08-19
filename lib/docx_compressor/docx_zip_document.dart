@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 import 'package:ofceab_docx_builder/components/base_components.dart';
 import 'package:archive/archive.dart';
@@ -36,9 +37,9 @@ class DocxCompressor implements IDocxCompressor {
   List<int> compress() {
     // Add document.xml in zp archive
 
-    final mainDocumentData = utf8.encode(mainDocument.xmlContent);
-    final contentTypeDocumentData = utf8.encode(contentTypeDocument.xmlContent);
-    final relsDocumentData = utf8.encode(relsDocument.xmlContent);
+    final mainDocumentData = mainDocument.xmlContent;
+    final contentTypeDocumentData = contentTypeDocument.xmlContent;
+    final relsDocumentData = relsDocument.xmlContent;
 
     _zipArchiver.addFile(ArchiveFile(
         mainDocument.fileName, mainDocumentData.length, mainDocumentData));
